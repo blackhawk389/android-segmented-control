@@ -140,7 +140,7 @@ public class SegmentedGroup extends RadioGroup {
         ColorStateList colorStateList = new ColorStateList(new int[][]{
                 {-android.R.attr.state_checked},
                 {android.R.attr.state_checked}},
-                new int[]{Color.BLACK, mCheckedTextColor});
+                new int[]{mTintColor, mCheckedTextColor});
         ((Button) view).setTextColor(colorStateList);
 
         //Redraw with tint color
@@ -211,12 +211,12 @@ public class SegmentedGroup extends RadioGroup {
     }
 
     /*
-         * This class is used to provide the proper layout based on the view.
-         * Also provides the proper radius for corners.
-         * The layout is the same for each selected left/top middle or right/bottom button.
-         * float tables for setting the radius via Gradient.setCornerRadii are used instead
-         * of multiple xml drawables.
-         */
+     * This class is used to provide the proper layout based on the view.
+     * Also provides the proper radius for corners.
+     * The layout is the same for each selected left/top middle or right/bottom button.
+     * float tables for setting the radius via Gradient.setCornerRadii are used instead
+     * of multiple xml drawables.
+     */
     private class LayoutSelector {
 
         private int children;
